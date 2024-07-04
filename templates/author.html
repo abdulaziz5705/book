@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Wuthor List </h1>
+{% for aut in all_author %}
+  <div class="card" style="width: 18rem;">
+    <img src="{{aut.image.url}}" class="card-img-top" alt="not found image">
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-it" , style="color: blue"; > Authour Name: {{aut.full_name}}</li>
+    </ul> <br>
+
+  </div>
+{% endfor %}
+
+{% endblock %}
