@@ -7,9 +7,12 @@ def home(request):
 
 
 def book(request):
+    if request.method == 'POST':
+        search = request.POST['search']
+        books = Book.objects.filter(title__icontains=search)
+        return render(request, 'book.html', {'books': books, 'values': search,})
     book = Book.objects.all()
-    context = {"all_book": book}
-    return render(request, 'book.html', context=context)
+    return render(request, 'book.html', {'book': book})
 
 
 def author(request):
