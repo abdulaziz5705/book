@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     #application
     'book',
     'import_export',
+    'users',
 ]
 
 MIDDLEWARE = [
