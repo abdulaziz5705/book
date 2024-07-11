@@ -15,7 +15,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_URL = '/login/'
 
 # Application definition
 
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'book',
     'import_export',
     'users',
+
 ]
 
 MIDDLEWARE = [
