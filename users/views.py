@@ -2,6 +2,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from .models import UserBook, NeedBook
 
 
 def login_view(request):
@@ -44,3 +45,21 @@ def logout_view(request):
     return redirect('login')
 
 
+def account(request):
+    return render(request, 'account/main.html')
+
+
+def about(request):
+    return render(request, 'account/about.html')
+
+
+def buy(request):
+    user_id = request.user.id
+    buy_book = UserBook.objects.filter(user=user_id)
+    return render(request, 'account/buy_book.html', {"buy_book": buy_book})
+
+
+def need(request):
+    user_id = request.user.id
+    need_book = NeedBook.objects.filter(user=user_id)
+    return render(request, 'account/need_book.html', {"need_book": need_book})

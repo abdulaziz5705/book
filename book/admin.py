@@ -15,5 +15,5 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'author', 'yili', 'tili']
-    list_display_links = ['title','author']
+    list_display_links = ['title', 'author']
     search_fields = ['title']
